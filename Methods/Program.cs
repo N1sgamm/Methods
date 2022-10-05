@@ -10,7 +10,7 @@ namespace Methods
     {
         static int score; //declaration
         static int health;
-        int monsters;
+        static int monsters;
 
         static void Main(string[] args)
         {
@@ -47,7 +47,7 @@ namespace Methods
             Console.WriteLine("You killed a monster");
             AddScore(enemyPoints);
             TakeDamage(monsters*10);
-            monsters = monsters - 1;
+            KillMonster();
             ShowHUD();
 
             Console.ReadKey(true);
@@ -87,6 +87,8 @@ namespace Methods
             Console.WriteLine("----------------");
             Console.WriteLine("Health: " + health);
             Console.WriteLine("----------------");
+            Console.WriteLine("Score Multiplier: " + combo);
+            Console.WriteLine("----------------");
             Console.WriteLine("Monsters Remaining: " + monsters);
             Console.WriteLine("----------------");
             Console.WriteLine();
@@ -102,7 +104,7 @@ namespace Methods
         }
         static void KillMonster()
         {
-
+            monsters = monsters - 1;
         }
     }
 }
